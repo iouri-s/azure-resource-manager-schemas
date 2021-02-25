@@ -25,7 +25,7 @@ jobs:
           -H "Accept: application/vnd.github.v3+json"
           -H "Content-Type: application/json"
           https://api.github.com/repos/PlayFab/pf-dev-deployment/actions/workflows/set-vertical-commit.yml/dispatches 
-          --data '{"ref": "main", "inputs": {"cloud" : "int", "vertical" : "int", "commit" : "$GITHUB_SHA" }}'
+          --data '{"ref": "main", "inputs": {"cloud" : "int", "vertical" : "int", "commit" : "${{ github.sha }}" }}'
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
